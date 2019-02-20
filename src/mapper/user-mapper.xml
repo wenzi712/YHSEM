@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cjl.mapper.user.UserMapper">
+
+	<!-- 
+		标签：
+		insert：增
+		delete：删
+		update：改
+		select：查
+		
+		属性：
+		id：该标签唯一标识，要和绑定的mapper类中的方法名一一对应
+		parameterType：参数类型，接收参数时使用
+		resultType：返回值类型，查询时使用
+		
+		resultMap：
+		parameterMap
+	 -->
+
+<!-- 查询 -->
+	<select id="queryUserInfo" resultType="User" parameterType="User">
+	    select b.t_userid as userId,
+		b.t_username as userName,
+		b.t_userphone as userPhone,
+		b.t_userage as userAge,
+		b.t_usersex as userSex
+		from t_user b
+		<where>
+			<if test="null != userName and '' != userName">
+				and b.t_username like '%' || #{userName} || '%'
+			</if>
+		</where>
+	</select>
+	
+	<!-- 新增 -->
+	<insert id="insertUserInfo" parameterType="User">
+		insert into t_user
+		(t_userid,t_username,t_userphone,t_usersex,t_userage)
+		values
+		(seq_stu.nextval,#{userName},#{userPhone},#{userSex},#{userAge})
+	</insert>
+	
+	<!-- 修改 回显-->
+	<select id="selectUserByID" parameterType="User" resultType="User">
+		select 
+		b.t_userid as userId,
+		b.t_username as userName,
+		b.t_userphone as userPhone,
+		b.t_userage as userAge,
+		b.t_usersex as userSex
+		from t_user b
+		where b.t_userid = #{userId}
+	</select>
+	<!--修改用户信息  -->
+	<update id="updateUserInfo" parameterType="User">
+		update t_user u set
+		 u.t_username = #{userName},
+		 u.t_userphone = #{userPhone},
+		 u.t_usersex = #{userSex},
+		 u.t_userage = #{userAge}
+		 where u.t_userid = #{userId}
+    </update>
+	
+
+	<!-- 删除批量删除 -->
+	<delete id="deleteUser">
+		delete t_user
+		where t_userid in
+		<foreach collection="userIdsList" item="ids" separator=" , " open=" ( " close=" ) ">
+		    #{ids}
+		</foreach>
+	</delete>
+		<!-- 
+	批量下架
+	<update id="upDownBook">
+		update t_book set bookup = 2
+		where bookid in
+		<foreach collection="bookIdsList" item="ids" separator=" , " open=" ( " close=" ) ">
+		    #{ids} 
+		</foreach>
+	</update>
+	
+	上架
+	<update id="bookUp" parameterType="Book">
+		update t_book set bookup = 1 where bookid = #{bookId}
+	</update>
+	
+	批量删除
+	<delete id="deleteBook" parameterType="Book">
+		delete t_book where bookid in (${bookIds}) 
+	</delete>
+	
+	上下架
+	<update id="bookUp" parameterType="Book">
+		<if test="1 == bookUp">
+			update t_book set bookup = 2 where bookid = #{bookId}
+		</if>
+		<if test="2 == bookUp">
+			update t_book set bookup = 1 where bookid = #{bookId}
+		</if>
+	</update> -->
+
+	
+</mapper>
