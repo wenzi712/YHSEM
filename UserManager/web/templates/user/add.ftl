@@ -9,30 +9,31 @@
 	<form id="add_form" method="post">
 		
 		<table>
-			<tr>
-				<td>用户姓名：</td>
+
+				<td>账户姓名：</td>
 				<td>
-				<input name="userName" class="easyui-textbox">
+				<input name="accountName" class="easyui-textbox">
 				</td>
 			</tr>
 			
 			<tr>
-				<td>用户年龄：</td>
+				<td>账户密码：</td>
 				<td>
-				<input name="userAge" class="easyui-textbox" >
+				<input name="accountPwd" class="easyui-textbox" >
+				</td>
+			</tr>
+
+			<tr>
+				<td>账户类型：</td>
+				<td>
+				<input id="add_type" name="accountTypeId">
 				</td>
 			</tr>
 			<tr>
-				<td>用户手机号：</td>
+				<td>是否开启信息流服务：</td>
 				<td>
-				<input name="userPhone" class="easyui-textbox">
-				</td>
-			</tr>
-			<tr>
-				<td>用户性别：</td>
-				<td>
-				<input type="radio" name="userSex" value="1">男
-				<input type="radio" name="userSex" value="2">女
+				<input type="radio" name="enabledInfoFlow" value="1">是
+				<input type="radio" name="enabledInfoFlow" value="2">否
 				</td>
 			</tr>
 			<tr>
@@ -46,13 +47,20 @@
 
 <script type="text/javascript">
 
+	//初始化部门下拉框（条查）
+		$('#add_type').combobox({
+		    url:'${base}/user/queryAccountType',    
+		    valueField:'accountTypeId',    
+		    textField:'accountType'   
+		}); 
+		
+
 
 	
 	//提交表单
 	$("#add_user").click(function() {
-		alert("123");
-		
-		$.ajax({
+
+		$.ajax({	
 			url:"${base}/user/insertUserInfo",
 			data:$("#add_form").serialize(),
 			type:"post",
