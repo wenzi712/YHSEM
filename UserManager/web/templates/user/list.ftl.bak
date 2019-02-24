@@ -52,9 +52,9 @@
 		{field:'user_XX',checkbox:true},
 	        {field:'accountId',title:'账户编号'},    
 	        {field:'accountName',title:'账户姓名'}, 
-	        {field:'accountPwd',title:'账户密码'},
+	        {field:'accountPwd',title:'账户密码',hidden:'true'},
 	        {field:'accountType',title:'账户类型'},
-	        {field:'token',title:'认证'},
+	        {field:'token',title:'认证',hidden:'true'},
 		{field:'account_status',title:'账户状态',hidden:'true'},
 
 		{field:'enabledInfoFlow',title:'是否开启信息流服务'},  
@@ -85,8 +85,8 @@
 		{field:'user_XX',checkbox:true},
 	        {field:'accountId',title:'账户编号'},    
 	        {field:'accountName',title:'账户姓名'}, 
-	        {field:'accountPwd',title:'账户密码'},
-		{field:'token',title:'认证'},
+	        {field:'accountPwd',title:'账户密码',hidden:'true'},
+		{field:'token',title:'认证',hidden:'true'},
 		{field:'account_status',title:'账户状态',hidden:'true'},
 		{field:'accountType',title:'账户类型', width:80, formatter:function(v, r, i) {
 	        	if (1 == v) {
@@ -120,16 +120,16 @@
 	    ]],
 	    //工具栏
 	    toolbar: [{
-		text:"添加",
+		text:"添加账户",
 			iconCls: 'icon-add',
 			handler: function(){openAdd()}
 		},'-',{
-			text:"修改",
+			text:"修改密码",
 			iconCls: 'icon-edit',
 			handler: function(){openEdit()}
 		
 		},'-',{
-			text:"禁用",
+			text:"禁用账户",
 			iconCls: 'icon-remove',
 			handler: function(){openDel()}
 		
@@ -167,8 +167,7 @@
 			buttons:[{
 				text:'保存',
 				handler:function(){
-					//把数据进行同步
-					data_sync();
+					
 					//ajax提交表单
 					$('#add_form').form('submit', {
 						url:"${base}/user/insertUserInfo",
@@ -198,8 +197,8 @@
 			var accountId = selected_edit_array[0].accountId;
 			var edit_dialog = $("<div></div>").dialog({
 				title:"修改账户密码",
-				width:800,
-				height:560,
+				width:400,
+				height:300,
 				modal:true,
 				href:"${base}/user/toEdit?accountId=" + accountId,
 				onClose:function() {
@@ -211,9 +210,11 @@
 						//ajax提交表单
 						$('#edit_form').form('submit', {
 						url:"${base}/user/updateUserInfo",
-						
+						dataType: 'text',
+						novalidate:true,
 						    success: function(data){ 
-						    	//回掉函数中关闭对话框   
+						    $.messager.alert('提示','修改成功！');
+						    	//回调函数中关闭对话框   
 						        edit_dialog.dialog("destroy");
 						        //刷新datagrid列表
 						       userSearch("reload");

@@ -27,11 +27,15 @@ public class AccountController {
 		return "user/list";
 	}
 	
-	@RequestMapping("queryUserInfo")
+	@RequestMapping("queryUserInfo")  
 	@ResponseBody
-	Map<String, Object> queryUserInfo(Account account, HttpSession session) {
+	public Map<String, Object> queryUserInfo(Account account) {
 		
 		Map<String, Object> map = accountService.queryUserInfo(account);
+		
+		List<Account> list = (List<Account>) map.get("rows");
+		
+		System.out.println(list.get(1).getAccountName());
 		return map;
 	}
 	
@@ -95,7 +99,5 @@ public class AccountController {
 		accountService.updateEnabledInfoFlow(account);
 		return "{}";
 	}
-	
-	
 	
 }
