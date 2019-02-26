@@ -1,9 +1,9 @@
-package com.cjl.mapper.account;
+package com.yh.mapper.account;
 
 import java.util.List;
 import java.util.Map;
 
-import com.cjl.pojo.account.Account;
+import com.yh.pojo.account.Account;
 
 public interface AccountMapper {
 
