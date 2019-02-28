@@ -26,7 +26,7 @@
 			<tr>
 				<td>账户类型：</td>
 				<td>
-				<input id="add_type" name="accountTypeId">
+				<input id="add_type" name="accountType">
 				</td>
 			</tr>
 			<tr>
@@ -50,7 +50,7 @@
 	//初始化部门下拉框（条查）
 		$('#add_type').combobox({
 		    url:'${base}/user/queryAccountType',    
-		    valueField:'accountTypeId',    
+		    valueField:'accountType',    
 		    textField:'accountType'   
 		}); 
 		

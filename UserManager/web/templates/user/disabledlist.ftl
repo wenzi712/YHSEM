@@ -39,7 +39,7 @@
 		{field:'user_XX',checkbox:true},
 	        {field:'accountId',title:'账户编号'},    
 	        {field:'accountName',title:'账户姓名'}, 
-	        {field:'accountPwd',title:'账户密码'},
+	        {field:'accountPwd',title:'账户密码',hidden:'true'},
 	        {field:'accountType',title:'账户类型', width:80, formatter:function(v, r, i) {
 	        	if (1 == v) {
 	        		return "百度";
@@ -51,7 +51,7 @@
 	        		return "神马";
 	        	}
 	        }},
-	        {field:'token',title:'认证'},
+	        {field:'token',title:'认证',hidden:'true'},
 		{field:'accountStatus',title:'账户状态',hidden:'true'},
 		{field:'enabledInfoFlow',title:'是否开启信息流服务', width:120, formatter:function(v, r, i) {
 	        	if (1 == v) {
@@ -88,8 +88,8 @@
 		{field:'user_XX',checkbox:true},
 	        {field:'accountId',title:'账户编号'},    
 	        {field:'accountName',title:'账户姓名'}, 
-	        {field:'accountPwd',title:'账户密码'},
-		{field:'token',title:'认证'},
+	        {field:'accountPwd',title:'账户密码',hidden:'true'},
+		{field:'token',title:'认证',hidden:'true'},
 		{field:'accountStatus',title:'账户状态',hidden:'true'},
 		{field:'accountType',title:'账户类型', width:80, formatter:function(v, r, i) {
 	        	if (1 == v) {

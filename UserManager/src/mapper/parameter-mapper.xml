@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cjl.mapper.parameter.ParameterMapper">
+
+
+
+<!-- 查询 -->
+	<select id="queryParameterInfo" resultType="Parameter" parameterType="Parameter">
+	    select t.account_type as accountType,
+	    	t.account_name as accountName,
+	    	t.search_type as searchType,
+	    	t.report_id as reportId,
+	   t.account_date as accountDate
+	    	from t_parameter t 
+	</select>
+	
+	<!-- 新增 -->
+	<insert id="insertParameterInfo" parameterType="Parameter">
+		insert into t_parameter
+		(report_id,account_name,account_type,search_type,account_date)
+		values
+		(seq_stu.nextval,#{accountName},#{accountType},#{searchType},#{accountDate})
+	</insert>
+	
+	<!--修改用户密码  -->
+	<update id="updateParameterInfo" parameterType="Parameter">
+		update t_parameter t  set
+		 t.account_name = #{accountName}
+		 where t.report_id = #{reportId}
+    </update>
+
+	<delete id="deleteParameter">
+			update t_parameter set account_name = #{accountName}
+
+		 where t.report_id = #{reportId}
+		
+	</delete>
+	
+	
+	
+	<update id="updateEnabledInfoFlow" parameterType="Parameter">
+		<if test="1 == enabledInfoFlow">
+			update t_account set enabled_info_flow = 2 where account_id = #{accountId}
+		</if>
+		<if test="2 == enabledInfoFlow">
+			update t_account set enabled_info_flow = 1 where account_id = #{accountId}
+		</if>
+	</update>
+	
+</mapper>

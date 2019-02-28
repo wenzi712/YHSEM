@@ -26,7 +26,7 @@
 			<tr>
 				<td>账户类型：</td>
 				<td>
-				<input id="add_type" name="accountTypeId">
+				<input id="add_type" name="accountType">
 				</td>
 			</tr>
 			<tr>
@@ -60,7 +60,7 @@
 	//提交表单
 	$("#add_user").click(function() {
 
-		$.ajax({
+		$.ajax({	
 			url:"${base}/user/insertUserInfo",
 			data:$("#add_form").serialize(),
 			type:"post",
