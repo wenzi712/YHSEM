@@ -25,10 +25,13 @@ public class Account extends PageUtil{
 	private  int accountStatus;
 	
 	private List<String> userIdsList;
+<<<<<<< HEAD
 	
 	public Account(){
 		
 	}
+=======
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4
 
 	public String getAccountId() {
 		return accountId;

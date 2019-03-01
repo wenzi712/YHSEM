@@ -17,7 +17,10 @@ public interface ParameterMapper {
 
 	void updateEnabledInfoFlow(Parameter parameter);
 
+<<<<<<< HEAD
 	void insertParameterInfo2(Parameter parameter);
+=======
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4
 
 
 }

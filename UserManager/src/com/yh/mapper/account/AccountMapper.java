@@ -1,12 +1,19 @@
 package com.yh.mapper.account;
 
 import java.util.List;
+<<<<<<< HEAD
 
 import org.springframework.stereotype.Component;
 
 import com.yh.pojo.account.Account;
 
 @Component
+=======
+import java.util.Map;
+
+import com.yh.pojo.account.Account;
+
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4
 public interface AccountMapper {
 
 

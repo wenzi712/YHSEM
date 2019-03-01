@@ -44,6 +44,7 @@ public class ParameterController {
 		return "{}";
 	}
 	
+<<<<<<< HEAD
 	
 	@RequestMapping("insertParameterInfo2")
 	@ResponseBody
@@ -52,6 +53,8 @@ public class ParameterController {
 		return "{}";
 	}
 	
+=======
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4
 
 
 	@RequestMapping("updateParameterInfo")

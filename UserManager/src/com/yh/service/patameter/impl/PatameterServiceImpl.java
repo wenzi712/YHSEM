@@ -40,6 +40,7 @@ public class PatameterServiceImpl implements ParameterService {
 		// TODO Auto-generated method stub
 		parameterMapper.insertParameterInfo(parameter);
 	}
+<<<<<<< HEAD
 	
 	@Override
 	public void insertParameterInfo2(Parameter parameter) {
@@ -47,6 +48,8 @@ public class PatameterServiceImpl implements ParameterService {
 		parameterMapper.insertParameterInfo2(parameter);
 	}
 
+=======
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4
 
 	@Override
 	public void updateParameterInfo(Parameter parameter) {
@@ -66,7 +69,10 @@ public class PatameterServiceImpl implements ParameterService {
 		parameterMapper.updateEnabledInfoFlow(parameter);
 	}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4
 }
 
 

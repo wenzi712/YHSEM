@@ -1,19 +1,31 @@
+<<<<<<< HEAD
 /*package com.yh.controller.weather;
+=======
+package com.yh.controller.weather;
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4
 
 import org.quartz.CronScheduleBuilder;
 import org.quartz.JobBuilder;
 import org.quartz.JobDetail;
 import org.quartz.Scheduler;
+<<<<<<< HEAD
 import org.quartz.SchedulerException;
 import org.quartz.en 
 ;
+=======
+import org.quartz.SimpleScheduleBuilder;
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4
 import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
 import org.quartz.impl.StdSchedulerFactory;
 
 
+<<<<<<< HEAD
 public class WeatherScheduler implements Runnable {
 
+=======
+public class WeatherScheduler {
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4
 	
 	public static void main(String[] args) throws Exception {
 		
@@ -37,6 +49,7 @@ public class WeatherScheduler implements Runnable {
 		//启动调度器
 		scheduler.start();
 	}
+<<<<<<< HEAD
 
 	public static void main(String[] args) {
 		WeatherScheduler wc = new WeatherScheduler();
@@ -84,3 +97,6 @@ public class WeatherScheduler implements Runnable {
 	}
 }
 */
+=======
+}
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4

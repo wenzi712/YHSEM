@@ -42,10 +42,15 @@
        <!-- 静态资源过滤 -->
        <mvc:resources location="/static/" mapping="/static/**"/>
        <mvc:resources location="/upload/" mapping="/upload/**"/>
+<<<<<<< HEAD
 	<!--  <bean id="springContextUtil" class="com.yh.service.springContex.springContextUtil"  lazy-init="false"/>
                
      <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean" />
 		<bean class="com.yh.service.springContex.springContextUtil"/>
 	 -->
+=======
+
+	
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4
 
 </beans>

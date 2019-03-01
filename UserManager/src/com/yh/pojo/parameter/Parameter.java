@@ -5,6 +5,7 @@ import java.util.Date;
 import com.yh.util.PageUtil;
 
 public class Parameter extends PageUtil {
+<<<<<<< HEAD
 	//台账ID
 	private String parameterId;
 	//账户类型
@@ -39,6 +40,20 @@ public class Parameter extends PageUtil {
 	public void setParameterId(String parameterId) {
 		this.parameterId = parameterId;
 	}
+=======
+	
+	
+	
+	private String accountType;
+	
+	private String  accountName;
+	
+	private Date accountDate;
+	
+	private String searchType;
+	
+	private String reportId;
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4
 
 	public String getAccountType() {
 		return accountType;
@@ -56,8 +71,11 @@ public class Parameter extends PageUtil {
 		this.accountName = accountName;
 	}
 
+<<<<<<< HEAD
 	
 
+=======
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4
 	public Date getAccountDate() {
 		return accountDate;
 	}
@@ -66,7 +84,17 @@ public class Parameter extends PageUtil {
 		this.accountDate = accountDate;
 	}
 
+<<<<<<< HEAD
 
+=======
+	public String getSearchType() {
+		return searchType;
+	}
+
+	public void setSearchType(String searchType) {
+		this.searchType = searchType;
+	}
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4
 
 	public String getReportId() {
 		return reportId;
@@ -76,6 +104,7 @@ public class Parameter extends PageUtil {
 		this.reportId = reportId;
 	}
 
+<<<<<<< HEAD
 
 
 	public Date getReportIdDate() {
@@ -139,4 +168,6 @@ public class Parameter extends PageUtil {
 	
 
 	
+=======
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4
 }
