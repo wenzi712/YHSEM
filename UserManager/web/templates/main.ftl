@@ -7,12 +7,18 @@
 </head>
 <body class="easyui-layout">
 	<div data-options="region:'north', height:100, title:'上', collapsible:false, split:true">
+<<<<<<< HEAD
+		<center><h2>YH后台管理界面</h2></center>
+		
+	</div>
+=======
 		<h3>用户管理界面</h3>
 		
 	</div>
     <div data-options="region:'south', height:80, title:'下', split:true">
     	
     </div>
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4
     
     <div data-options="region:'west', width:160, title:'左', split:true">
     	<#-- 菜单树容器 -->

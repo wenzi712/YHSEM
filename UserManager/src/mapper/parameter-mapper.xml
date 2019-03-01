@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<<<<<<< HEAD
+<mapper namespace="com.yh.mapper.parameter.ParameterMapper">
+=======
 <mapper namespace="com.cjl.mapper.parameter.ParameterMapper">
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4
 
 
 
@@ -16,6 +20,21 @@
 	
 	<!-- 新增 -->
 	<insert id="insertParameterInfo" parameterType="Parameter">
+<<<<<<< HEAD
+		insert into t_parameter 
+		(account_name,account_type,account_date,account_pwd,token)
+		values
+		(#{accountName},#{accountType},#{accountDate},#{accountPwd},#{token})
+	</insert>
+	
+	<!-- 新增 -->
+	<insert id="insertParameterInfo2" parameterType="Parameter">
+		insert into t_parameter 
+		(report_id,report_id_date,report_state,report_state_date,report_url,report_url_date)
+		values
+		(#{reportId},#{reportIdDate},#{reportState},#{reportStateDate},#{reportUrl},#{reportUrlDate})
+	</insert>
+=======
 		insert into t_parameter
 		(report_id,account_name,account_type,search_type,account_date)
 		values
@@ -46,5 +65,6 @@
 			update t_account set enabled_info_flow = 1 where account_id = #{accountId}
 		</if>
 	</update>
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4
 	
 </mapper>

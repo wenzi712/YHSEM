@@ -44,6 +44,17 @@ public class ParameterController {
 		return "{}";
 	}
 	
+<<<<<<< HEAD
+	
+	@RequestMapping("insertParameterInfo2")
+	@ResponseBody
+	public String insertParameterInfo2(Parameter parameter) {
+		parameterService.insertParameterInfo2(parameter);
+		return "{}";
+	}
+	
+=======
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4
 
 
 	@RequestMapping("updateParameterInfo")

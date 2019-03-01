@@ -26,6 +26,22 @@ public class AccountController {
 	String toListPage() {
 		return "user/list";
 	}
+<<<<<<< HEAD
+
+	public  Map<String, Object> queryUserInfo(Account account) {
+		
+		Map<String, Object> map = accountService.queryUserInfo(account);
+	
+		return map;
+	}
+	@RequestMapping("queryUserInfo")  
+	@ResponseBody
+	public Map<String, Object> queryAccountInfo(Account account) {
+		
+		Map<String, Object> map = accountService.queryUserInfo(account);
+		
+		
+=======
 	
 	@RequestMapping("queryUserInfo")  
 	@ResponseBody
@@ -36,6 +52,7 @@ public class AccountController {
 		List<Account> list = (List<Account>) map.get("rows");
 		
 		System.out.println(list.get(1).getAccountName());
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4
 		return map;
 	}
 	

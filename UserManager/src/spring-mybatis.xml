@@ -88,9 +88,22 @@
        </tx:advice>
 
        <!-- 配置切面 -->
+<<<<<<< HEAD
+ <!--       事务 aop 配置
+	<aop:config>
+    <aop:pointcut id="serviceMethods" expression="execution(* com.yh.service..*(..))"/>
+    <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods"/>
+	</aop:config> -->
+       
+       
+       <aop:config>
+              <!--advice-ref：引入第二步中的传播特性 -->
+              <aop:advisor pointcut="execution (* com.yh.service..*.*(..))"
+=======
        <aop:config>
               <!--advice-ref：引入第二步中的传播特性 -->
               <aop:advisor pointcut="execution (* com.cjl.service..*.*(..))"
+>>>>>>> 884352bcad5fb878e9eff072faf42fbe611fcfc4
                            advice-ref="txAdvice" />
        </aop:config>
 
