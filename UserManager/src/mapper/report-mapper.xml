@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yh.mapper.report.ReportMapper">
+
+
+
+<!-- 查询 -->
+	<select id="queryRegionReportDataBeanInfo" resultType="RegionReportBean" parameterType="RegionReportBean">
+	</select>
+	<!-- 新增 -->
+	<insert id="insertRegionReportDataBeanInfo" parameterType="RegionReportBean">
+		<!-- insert into yh_region_report  
+		(region_date,account_id,user_name,region_id,region,city_id,city,clicks,cost,cvr,acp,cpm,vr)
+		values
+		(#{Date},#{accrId},#{username},#{regionId},#{region},
+			#{cityId},#city},#{displays},#{clicks},#{cost},#{avr},#{acp},#{cpm},#{vr}) -->
+			
+			insert into yh_region_report (city,city_id,region_date,account_id,user_name,region_id,region,clicks,cost,cvr,acp,cpm,vr,displays)
+			values
+			(#{city},#{cityId},#{Data},#{accrId},#{username},#{regionId},#{region},#{clicks},#{cost},#{cvr},#{acp},#{apm},#{vr},#{displays})
+			
+	</insert>
+	
+	
+	
+</mapper>
